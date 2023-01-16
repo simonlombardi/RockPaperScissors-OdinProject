@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap'); 
+
+body{
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,56,1) 44%, rgb(9, 9, 24) 84%);    margin:0;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1,p {
+    text-align: center;
+    color: white;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #005C53;
+}
+
+.grid-container {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3,350px);
+    grid-template-rows: repeat(3,100px);
+    grid-template-areas:
+    "scissors . paper"
+    ". . ."
+    ". rock .";
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    margin-left: 85px;
+}
+
+.button-box{
+    height: 20vh;
+    width: 20vw;
+    margin-top: 50px;
+    border-radius: 15px;
+    
+}
+    .button-box:hover{
+        transform: scale(1.1);
+        transition: all 0.5s;
+
+    }
+
+#rock{
+    grid-area: rock;
+}
+    #rock:hover{
+        border-width: 5px;
+        border-color: blue;
+    }
+
+#paper{
+    grid-area: paper;
+}
+    #paper:hover{
+        border-width: 5px;
+        border-color: red;
+    }
+
+#scissors{
+    grid-area: scissors;
+}
+    #scissors:hover{
+        border-width: 5px;
+        border-color: rgb(9, 255, 0);
+    }
+
+@media (max-width:1000px){
+    .grid-container{
+        grid-template-columns: repeat(3,200px);
+        grid-template-areas:
+        "scissors rock paper";
+    }
+}
+
+@media (max-width:600px){
+    .grid-container{
+        margin-top: 0;
+        grid-template-columns: repeat(3,200px);
+        grid-template-rows: repeat(3,200px);
+        grid-template-areas:
+        ". scissors ."
+        ". rock ."
+        ". paper .";
+        
+    }
+    .grid-container img{
+        width: 90px;
+    }
+
+    .button-box{
+        height: 100px;
+        width: 100px;
+    }
+}
